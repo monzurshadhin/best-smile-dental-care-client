@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img1 from '../../../Images/CarouselImages/4.jpg';
 import './About.css';
 
@@ -12,7 +13,10 @@ const About = () => {
                         <h3 className="mt-3">Why you should visit us</h3>
                         <h5 className="about-small-details">Best Smile Dental care was founded in 2017.With the vision of developing high quality and affordable health care infrastructure</h5>
                         <p>We are a chain of dental clinics offering specialized treatment by experienced doctors. We offer the entire range of dental treatments and procedures at transparent and printed prices standards for all patients.</p>
-                        <button className="carousel-btn">Make Appointment</button>
+                        <Link to="/appointment">
+                        <button 
+                        className="carousel-btn">Make Appointment</button>
+                        </Link>
 
                     </div>
                     <div className="col-12 col-md-6 order-md-2 order-1">

@@ -7,7 +7,7 @@
 
     "details": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
 
-    "price": 200
+    "price": 80
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
 
     "details": "There are a variety of treatments for gum disease depending on the stage of disease, how you may have responded to earlier treatments, and your overall health.Treatments range from nonsurgical therapies that control bacterial growth to surgery to restore supportive tissues.",
 
-    "price": 350
+    "price": 150
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
 
     "details": "In adults, the most common cause of obstructive sleep apnea is excess weight and obesity, which is associated with the soft tissue of the mouth and throat. During sleep, when throat and tongue muscles are more relaxed, this soft tissue can cause the airway to become blocked.",
 
-    "price": 450
+    "price": 250
   },
   {
     "id": 4,
@@ -37,7 +37,7 @@
 
     "details": " Restorations are the various ways your dentist can replace or restore your missing teeth or missing parts of your tooth structure, or structures that need to be removed to prevent decay that may cause you pain in the future.",
 
-    "price": 170
+    "price": 70
   },
   {
     "id": 5,
@@ -47,7 +47,7 @@
 
     "details": "A smile design is a dental procedure which artistically creates straighter, whiter and beautiful natural looking smiles. Smile designs can do wonders to fully restore your dental health and appearance regardless of the original state of your existing teeth.",
 
-    "price": 390
+    "price": 90
   },
   {
     "id": 6,
@@ -57,6 +57,6 @@
 
     "details": "A root canal is performed when the endodontist removes the infected pulp and nerve in the root of the tooth, cleans and shapes the inside of the root canal, then fills and seals the space. Afterward, your dentist will place a crown on the tooth to protect and restore it to its original function.",
 
-    "price": 340
+    "price": 240
   }
 ]

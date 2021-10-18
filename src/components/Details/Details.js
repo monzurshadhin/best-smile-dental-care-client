@@ -17,6 +17,7 @@ const Details = () => {
                 <div className="px-2">
                 <h1><b>{details?.title}</b></h1>
                 <p>{details?.details}</p>
+                <h3><b>$ <span>{details?.price}</span></b></h3>
                 <Link to="/appointment">
                 <button className="carousel-btn">Make Appointment</button>
                 </Link>

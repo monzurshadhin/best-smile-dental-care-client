@@ -1,5 +1,6 @@
 import React from "react";
 import { Carousel } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import img3 from "../../../Images/CarouselImages/1.jpg";
 import img2 from "../../../Images/CarouselImages/2.jpg";
 import img1 from "../../../Images/CarouselImages/3.jpg";
@@ -20,7 +21,9 @@ const Banner = () => {
             <p>
               Top most Dentist is waiting to treat you. To get your best smile.
             </p>
+            <Link to="/appointment">
             <button className="carousel-btn">Make Appointment</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item className='carousel-item'>
@@ -52,7 +55,9 @@ const Banner = () => {
             <p>
               Top most Dentist is waiting to treat you. To get your best smile.
             </p>
+            <Link to="/appointment">
             <button className="carousel-btn">Make Appointment</button>
+            </Link>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
