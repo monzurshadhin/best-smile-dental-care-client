@@ -1,0 +1,28 @@
+.navbar-section {
+  background-color: #3fce92;
+}
+.logo {
+  font-size: 25px;
+}
+.logo span {
+  color: white;
+}
+.nav-link {
+  text-decoration: none;
+  color: white !important;
+  font-size: 18px;
+}
+.header-btn {
+  outline: none;
+  border: none;
+  background-color: #f05b43;
+  padding: 5px 8px;
+  border-radius: 5px;
+  color: white;
+}
+.user-name {
+  text-decoration: none;
+  color: white !important;
+  font-weight: bold;
+  margin-right: 5px;
+}

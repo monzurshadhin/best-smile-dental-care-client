@@ -1,0 +1,29 @@
+.service-body {
+  height: 130px;
+}
+.service-btn {
+  border: none;
+  outline: none;
+  background-color: #3fce92;
+  color: white;
+  padding: 6px 10px;
+  margin-bottom: 10px;
+}
+.service-btn:hover {
+  background-color: #f05b43;
+}
+.card-img {
+  transition: 0.4s;
+}
+.img-body {
+  overflow: hidden;
+}
+.service-card {
+  transition: 0.3s;
+}
+.service-card:hover .card-img {
+  transform: scale(1.1);
+}
+.service-card:hover {
+  box-shadow: rgba(0, 0, 0, 0.226) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}

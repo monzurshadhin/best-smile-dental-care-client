@@ -1,0 +1,19 @@
+.designation:hover {
+  color: #3fce92;
+  cursor: pointer;
+}
+.name:hover {
+  color: #f05b43;
+  cursor: pointer;
+}
+.card-image {
+  overflow: hidden;
+  padding: 0% !important;
+}
+.doctors-card img {
+  transition: 0.5s;
+}
+.doctors-card:hover img {
+  transform: scale(1.2);
+  overflow: hidden;
+}

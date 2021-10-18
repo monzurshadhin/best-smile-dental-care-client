@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "img": "https://media.istockphoto.com/photos/doctor-wears-mask-while-talking-to-patient-picture-id1263930311?k=20&m=1263930311&s=612x612&w=0&h=ymiDi8CmLg0dFYK5vl6EMsbi2tlfxO44eL2s6nHD9II=",
+    "name": "James Townsend",
+    "designation": "Denturist"
+  },
+  {
+    "id": 2,
+    "img": "https://media.istockphoto.com/photos/young-smiling-businessman-greets-with-his-elbow-stock-photo-picture-id1264147594?k=20&m=1264147594&s=612x612&w=0&h=ZOCHKTTM_nCXT7s_l6quTio551bTwMr9mPgX9ub7BLI=",
+    "name": "Naina Shah",
+    "designation": "DMD, MSC"
+  },
+  {
+    "id": 3,
+    "img": "https://media.istockphoto.com/photos/young-indian-businessman-wearing-mask-while-doing-laundry-indoors-picture-id1249994604?k=20&m=1249994604&s=612x612&w=0&h=X87zUiGyMBv7EJCPbp-tf4kQ4jURgNHUkF-wgKrZBkI=",
+    "name": "John Deo",
+    "designation": "MSC"
+  },
+  {
+    "id": 4,
+    "img": "https://media.istockphoto.com/photos/doctor-wearing-a-facemask-at-the-hospital-during-the-covid19-pandemic-picture-id1333458378?k=20&m=1333458378&s=612x612&w=0&h=f-nRQ5EwIRe0xDQNIGEy7smZNkC2HaYVSSXSmmvepRU=",
+    "name": "Soim Hicks",
+    "designation": "Denturist"
+  },
+  {
+    "id": 5,
+    "img": "https://media.istockphoto.com/photos/young-businesswoman-wearing-a-health-mask-and-talking-on-the-phone-in-picture-id1281678799?k=20&m=1281678799&s=612x612&w=0&h=kXW5RY-ErQgw3Td6WDU9JUABjiYf6WPn3G7pDzHEr5Q=",
+    "name": "Helena Torres",
+    "designation": "Dental Care Cordinator"
+  },
+  {
+    "id": 6,
+    "img": "https://media.istockphoto.com/photos/team-of-doctors-and-nurses-in-hospital-picture-id1307543618?b=1&k=20&m=1307543618&s=170667a&w=0&h=hXpYmNYXnhdD36C-8taPQvdpM9Oj-woEdge8nvPrsZY=",
+    "name": "Martin Lee",
+    "designation": "DMD, MSC"
+  },
+  {
+    "id": 7,
+    "img": "https://media.istockphoto.com/photos/portrait-of-middle-aged-asian-female-doctor-standing-in-hospital-picture-id1271328839?b=1&k=20&m=1271328839&s=170667a&w=0&h=SIMzwoe8eu43OoY4M3ElZCMxW9MgDbZbVzMhh4VY2zM=",
+    "name": "Judy Nadel",
+    "designation": "Dental Hygienist"
+  },
+  {
+    "id": 8,
+    "img": "https://media.istockphoto.com/photos/mid-adult-female-doctor-with-arms-crossed-wears-a-protective-mask-in-picture-id1305937737?k=20&m=1305937737&s=612x612&w=0&h=iQS3z29EGX8DRdcEa7YbvlX92lomBgiLJJpNJeyIhiA=",
+    "name": "Robert Worley",
+    "designation": "DMD, MSC"
+  },
+  {
+    "id": 9,
+    "img": "https://media.istockphoto.com/photos/doctor-clicking-on-a-laptop-before-her-picture-id1292777576?b=1&k=20&m=1292777576&s=170667a&w=0&h=Tg1ASn3aw19DgyqjGaaWqJmPeXiDRaU1LW8c83Y5tbw=",
+    "name": "Richerd Nadal",
+    "designation": "Dental Hygienist"
+  }
+]

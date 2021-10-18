@@ -1,0 +1,20 @@
+.appointment-title {
+  margin-top: 130px;
+}
+.appointment-form {
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 6px 6px 0px,
+    rgba(60, 64, 67, 0.15) 0px 6px 6px 2px;
+  padding: 30px;
+  border: 2px solid #3fce92;
+}
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.appointment-input {
+  border: none;
+  background-color: rgb(226, 220, 220);
+  height: 50px;
+  margin-bottom: 30px;
+}

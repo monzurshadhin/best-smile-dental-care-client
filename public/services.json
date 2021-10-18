@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "img": "https://i.ibb.co/DQK8WKg/Before-and-after.jpg",
+    "title": "Teeth Whitening",
+    "short_details": "Tooth whitening can make your teeth sparkling white and beautiful!",
+
+    "details": "Everyone wants a white teeth and healthy smile and Unfortunately, things don’t always go as planned, which explains why teeth whitening is such a popular procedure.",
+
+    "price": 200
+  },
+  {
+    "id": 2,
+    "img": "https://i.ibb.co/9WwB5VD/Ceramic-bridge-close-up-view.jpg",
+    "title": "Gum Treatment",
+    "short_details": "Gum disease like gingivitis, periodontitis can cause you to lose teeth.",
+
+    "details": "There are a variety of treatments for gum disease depending on the stage of disease, how you may have responded to earlier treatments, and your overall health.Treatments range from nonsurgical therapies that control bacterial growth to surgery to restore supportive tissues.",
+
+    "price": 350
+  },
+  {
+    "id": 3,
+    "img": "https://i.ibb.co/7j54dRR/Cpap-for-Sleep-Apnea-on-Woman-in-Bedroom.jpg",
+    "title": "Sleep Apnea",
+    "short_details": "Snoring is one of the symptoms of a health condition known as sleep apnea.",
+
+    "details": "In adults, the most common cause of obstructive sleep apnea is excess weight and obesity, which is associated with the soft tissue of the mouth and throat. During sleep, when throat and tongue muscles are more relaxed, this soft tissue can cause the airway to become blocked.",
+
+    "price": 450
+  },
+  {
+    "id": 4,
+    "img": "https://i.ibb.co/bvgMrYZ/Close-up-portrait-of-a-sad-young-girl-with-a-painful-tooth-a-doctor-in-office-chairs-an-isolated-den.jpg",
+    "title": "Restoration",
+    "short_details": "Tooth restorations are the various ways your dentist can replace missing teeth.",
+
+    "details": " Restorations are the various ways your dentist can replace or restore your missing teeth or missing parts of your tooth structure, or structures that need to be removed to prevent decay that may cause you pain in the future.",
+
+    "price": 170
+  },
+  {
+    "id": 5,
+    "img": "https://i.ibb.co/THwdYSQ/Man-having-teeth-examined-at-dentists-Overview-of-dental-caries-prevention.jpg",
+    "title": "Smile Design",
+    "short_details": "Smile Design, is a multi-use conceptual dental treatment.",
+
+    "details": "A smile design is a dental procedure which artistically creates straighter, whiter and beautiful natural looking smiles. Smile designs can do wonders to fully restore your dental health and appearance regardless of the original state of your existing teeth.",
+
+    "price": 390
+  },
+  {
+    "id": 6,
+    "img": "https://i.ibb.co/mynQXYD/Dentist-working-on-a-patient-mouth-Many-more-at-Dental-Lightbox-cliking-on-any-photo-More.jpg",
+    "title": "Root Canal",
+    "short_details": "A root canal is the anatomic space within the root of a tooth.",
+
+    "details": "A root canal is performed when the endodontist removes the infected pulp and nerve in the root of the tooth, cleans and shapes the inside of the root canal, then fills and seals the space. Afterward, your dentist will place a crown on the tooth to protect and restore it to its original function.",
+
+    "price": 340
+  }
+]
