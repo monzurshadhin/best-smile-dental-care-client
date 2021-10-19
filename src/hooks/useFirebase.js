@@ -15,6 +15,7 @@ import firebaseAuthentication from "../components/Login/firebase/firebase.init";
 
 firebaseAuthentication();
 const useFirebase = () => {
+  // useState 
   const [user, setUser] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [name, setName] = useState("");
@@ -23,11 +24,15 @@ const useFirebase = () => {
   const [message,setMessage] = useState("");
   const [error,setError] = useState("");
 
+  // Auth 
   const auth = getAuth();
+
+  // providers
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
 
 
+  // get and set name,email and password 
   const handleName = (e) => {
     setName(e.target.value);
   };
@@ -37,6 +42,8 @@ const useFirebase = () => {
   const handlePassword = (e) => {
     setPassword(e.target.value);
   };
+
+  // register new user 
   const registerNewUsers = (e) => {
     e.preventDefault();
 
@@ -52,19 +59,21 @@ const useFirebase = () => {
     }
     createUserWithEmailAndPassword(auth, email, password).then((result) => {
       console.log(result.user);
+      setUser(result.user);
       updateBasicInfo();
       veryfyEmail();
-      
-      setUser(result.user);
       setError("");
-        setMessage("Registration successful");
-        window.location.reload();
+      setMessage("Registration successful");
+        
+      window.location.reload();
         
     }).catch((error) => {
       setMessage('');
       setError("register failed")
     });
   };
+
+  // update name 
   const updateBasicInfo = () => {
     updateProfile(auth.currentUser, {
       displayName: name,
@@ -72,22 +81,28 @@ const useFirebase = () => {
       .then(() => {})
       .catch((error) => {});
   };
+  // veryfyEmail
   const veryfyEmail = () => {
     sendEmailVerification(auth.currentUser).then(() => {});
   };
 
+  // loginProcess 
   const loginProcess = () => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
+  // login with google 
   const signInUsingGoogle = () => {
     setIsLoading(true);
     return signInWithPopup(auth, googleProvider);
   };
+
+  // login with Facebook 
   const signInUsingFacebook = () => {
     setIsLoading(true);
     return signInWithPopup(auth, facebookProvider);
   };
+  // logout function 
   const logOut = () => {
     setIsLoading(true);
     signOut(auth)
@@ -99,6 +114,7 @@ const useFirebase = () => {
         setIsLoading(false);
       });
   };
+  // get user all time 
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {

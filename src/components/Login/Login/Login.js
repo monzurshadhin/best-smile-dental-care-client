@@ -11,6 +11,8 @@ const Login = () => {
   const location = useLocation();
   const history = useHistory();
   const redirect_uri = location.state?.from || "/home";
+
+  // handle Google Login 
   const handleGoogleLogin = () => {
     signInUsingGoogle()
       .then((result) => {
@@ -30,6 +32,7 @@ const Login = () => {
       });
   };
 
+  // handle facebook login 
   const handleFacebookLogin = () =>{
     signInUsingFacebook()
     .then((result) => {
@@ -47,6 +50,7 @@ const Login = () => {
       });
   }
 
+  //handle login with email and password 
   const handleLoginProcess =(e) =>{
     e.preventDefault();
     loginProcess()
@@ -74,14 +78,14 @@ const Login = () => {
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control onBlur={handleEmail}
                   className="input-field"
-                  type="email"
+                  type="email" required
                   placeholder="Email"
                 />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Control onBlur={handlePassword}
-                  className="input-field"
+                  className="input-field" required
                   type="password"
                   placeholder="Password"
                 />

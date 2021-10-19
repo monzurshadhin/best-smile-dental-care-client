@@ -10,6 +10,8 @@ const Register = () => {
     const location = useLocation();
     const history = useHistory();
     const redirect_uri = location.state?.from || "/home";
+    
+    // handle google login 
     const handleGoogleLogin = () => {
       signInUsingGoogle()
         .then((result) => {
@@ -28,6 +30,7 @@ const Register = () => {
         });
     };
   
+    // handle facebook login 
     const handleFacebookLogin = () =>{
       signInUsingFacebook()
       .then((result) => {
@@ -53,20 +56,20 @@ const Register = () => {
               <Form onSubmit={registerNewUsers}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 
-                <Form.Control onBlur={handleName} className="input-field" type="text" placeholder="Name" />
+                <Form.Control onBlur={handleName} className="input-field" type="text" placeholder="Name" required />
                 
               </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Control onBlur={handleEmail}
                     className="input-field"
-                    type="email"
+                    type="email" required
                     placeholder="Email"
                   />
                 </Form.Group>
   
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control onBlur={handlePassword}
-                    className="input-field"
+                    className="input-field" required
                     type="password"
                     placeholder="Password"
                   />
