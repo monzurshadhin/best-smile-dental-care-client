@@ -23,7 +23,9 @@ const useFirebase = () => {
   const [password, setPassword] = useState("");
   const [message,setMessage] = useState("");
   const [error,setError] = useState("");
+  const [userName,setUserName] = useState("");
 
+  // console.log(user.displayName);
   // Auth 
   const auth = getAuth();
 
@@ -31,7 +33,7 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
 
-
+  
   // get and set name,email and password 
   const handleName = (e) => {
     setName(e.target.value);
@@ -48,17 +50,18 @@ const useFirebase = () => {
     e.preventDefault();
 
     if (password.length < 6) {
-        setError("Password Mustbe 6 digit");
+        setError("Password Must be 6 digit");
         setMessage("");
       return;
     }
     if (!/(?=.*?[A-Z])/.test(password)) {
-        setError("Password Mustbe contain an uppercase character");
+        setError("Password Must be contain an uppercase character");
         setMessage("");
       return;
     }
     createUserWithEmailAndPassword(auth, email, password).then((result) => {
       console.log(result.user);
+    
       setUser(result.user);
       updateBasicInfo();
       veryfyEmail();
@@ -66,6 +69,8 @@ const useFirebase = () => {
       setMessage("Registration successful");
         
       window.location.reload();
+
+      
         
     }).catch((error) => {
       setMessage('');
@@ -78,7 +83,9 @@ const useFirebase = () => {
     updateProfile(auth.currentUser, {
       displayName: name,
     })
-      .then(() => {})
+      .then(() => {
+
+      })
       .catch((error) => {});
   };
   // veryfyEmail

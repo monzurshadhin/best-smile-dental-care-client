@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 import './Header.css';
 const Header = () => {
+  const [isActive, setIsActive] = useState('home');
   const {user,logOut} = useAuth();
+  const handleActive = (props) =>{
+    setIsActive(props);
+  }
+  console.log(user)
     return (
         <Navbar fixed="top" className="navbar-section"  expand="lg">
         <Container>
@@ -13,23 +18,23 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto d-flex align-items-center">
-            <Nav.Link as={HashLink} className="navbar-link" to="/home#home">
+            <Nav.Link as={HashLink} onClick={()=>handleActive('home')} className={isActive==='home'&&"active-nav"} to="/home#home">
               Home
             </Nav.Link>
-            <Nav.Link as={HashLink} to="home#services">
+            <Nav.Link as={HashLink} onClick={()=>handleActive('service')} className={isActive==='service'&&"active-nav"} to="/home#services">
               Services
             </Nav.Link>
-            <Nav.Link as={HashLink} to="/home#about_us">
+            <Nav.Link as={HashLink} onClick={()=>handleActive('about')} className={isActive==='about'&&"active-nav"} to="/home#about_us">
               About us
             </Nav.Link>
             {/* best-equipments */}
-            <Nav.Link as={HashLink} to="/home#best-equipments">
+            <Nav.Link as={HashLink} onClick={()=>handleActive('equipments')} className={isActive==='equipments'&&"active-nav"} to="/home#best-equipments">
               Best of best
             </Nav.Link>
-            <Nav.Link as={HashLink} to="/doctors">
+            <Nav.Link as={HashLink} onClick={()=>handleActive('doctors')} className={isActive==='doctors'&&"active-nav"} to="/doctors">
               Doctors
             </Nav.Link>
-            <Nav.Link as={HashLink} to="/appointment">
+            <Nav.Link as={HashLink} onClick={()=>handleActive('appointments')} className={isActive==='appointments'&&"active-nav"} to="/appointment">
               Appointment
             </Nav.Link>
             {user?.displayName ? (
@@ -45,7 +50,7 @@ const Header = () => {
               </>
             ) : (
               <>
-                <Nav.Link  as={Link} to="/login">
+                <Nav.Link  as={Link} onClick={()=>handleActive('login')} className={isActive==='login'&&"active-nav"} to="/login">
                   Login
                 </Nav.Link>
                 <Nav.Link as={Link} to="/register">

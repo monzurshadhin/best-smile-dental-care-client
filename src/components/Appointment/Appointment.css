@@ -1,11 +1,12 @@
 .appointment-title {
-  margin-top: 130px;
+  padding-top: 130px;
 }
 .appointment-form {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 6px 6px 0px,
     rgba(60, 64, 67, 0.15) 0px 6px 6px 2px;
   padding: 30px;
   border: 2px solid #3fce92;
+  background-color: white;
 }
 label {
   display: block;

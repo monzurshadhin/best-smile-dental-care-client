@@ -4,7 +4,10 @@
 }
 .footer-text {
   line-height: 10px;
-  font-size: 13px;
+  font-size: 14px;
   margin-top: 20px;
   color: rgb(156, 151, 151);
+}
+.footer-section p {
+  cursor: pointer;
 }

@@ -7,8 +7,10 @@ const Appointment = () => {
   const { user } = useAuth();
 
   return (
+    <div className="appointment-section">
+    
     <div className="container ">
-      <h1 className="text-center appointment-title"><b>Make an appointment to a Dentist</b></h1>
+      <h1 className="text-center appointment-title section-title"><b>Make an appointment to a <span>Dentist</span></b></h1>
       <p className="text-center mb-5">
         <p>To request an appointment, please fill out the form below</p>
       </p>
@@ -136,6 +138,8 @@ const Appointment = () => {
           <button className="carousel-btn">Get Emergency</button>
           </div>
       </div>
+    </div>
+      
     </div>
   );
 };

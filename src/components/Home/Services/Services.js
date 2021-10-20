@@ -6,7 +6,7 @@ import './Services.css';
 
 const Services = () => {
     const {services} = useServices();
-    // console.log(services)
+    
     return (
         <div className="services-section my-5" id="services">
             <h3 className="text-center mb-4 section-title">Our <span>Services</span></h3>
