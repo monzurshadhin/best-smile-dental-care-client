@@ -1,3 +1,6 @@
 .swiper-card-img {
   border-radius: 50%;
 }
+.slide-part {
+  cursor: pointer;
+}

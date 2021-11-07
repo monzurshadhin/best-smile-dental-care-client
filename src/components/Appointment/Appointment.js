@@ -23,7 +23,7 @@ const Appointment = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
+    fetch(`https://thawing-lowlands-95103.herokuapp.com/details/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -32,7 +32,7 @@ const Appointment = () => {
   const onSubmit = (data) => {
   
     console.log(data);
-    fetch("http://localhost:5000/appointment", {
+    fetch("https://thawing-lowlands-95103.herokuapp.com/appointment", {
       method: "POST",
       headers: {
         "content-type": "application/json",

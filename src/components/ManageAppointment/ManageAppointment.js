@@ -10,7 +10,7 @@ const ManageAppointment = () => {
   console.log(appointments);
   useEffect(() => {
     const data = { email: user.email };
-    fetch("http://localhost:5000/appointment/manage", {
+    fetch("https://thawing-lowlands-95103.herokuapp.com/appointment/manage", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -23,7 +23,7 @@ const ManageAppointment = () => {
 
   const handleDelete = (id) => {
     // console.log(id);
-    const url = `http://localhost:5000/appointment/delete/${id}`;
+    const url = `https://thawing-lowlands-95103.herokuapp.com/appointment/delete/${id}`;
     fetch(url, {
       method: "DELETE",
     })

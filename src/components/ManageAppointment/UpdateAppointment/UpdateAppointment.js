@@ -13,7 +13,7 @@ const UpdateAppointment = () => {
     
     // console.log(service);
     useEffect(() => {
-        fetch(`http://localhost:5000/appointment/details/${id}`)
+        fetch(`https://thawing-lowlands-95103.herokuapp.com/appointment/details/${id}`)
           .then((res) => res.json())
           .then((data) => setService(data));
       }, []);
@@ -21,7 +21,7 @@ const UpdateAppointment = () => {
       const onSubmit = data => {
         //   console.log(data);
 
-          const url = `http://localhost:5000/appointment/update/${id}`;
+          const url = `https://thawing-lowlands-95103.herokuapp.com/appointment/update/${id}`;
           fetch(url,{
               method:'PUT',
               headers:{

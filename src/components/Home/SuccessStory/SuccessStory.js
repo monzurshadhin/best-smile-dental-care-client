@@ -39,7 +39,7 @@ const SuccessStory = () => {
         onSwiper={(swiper) => console.log(swiper)}
       >
         <SwiperSlide>
-          <div className="">
+          <div className="slide-part">
             <div className="d-flex justify-content-center">
               <img
                 className="swiper-card-img my-4"
@@ -59,7 +59,7 @@ const SuccessStory = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="">
+          <div className="slide-part">
             <div className="d-flex justify-content-center">
               <img
                 className="swiper-card-img my-4"
@@ -79,7 +79,7 @@ const SuccessStory = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="">
+          <div className="slide-part">
             <div className="d-flex justify-content-center">
               <img
                 className="swiper-card-img my-4"
