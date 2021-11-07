@@ -6,6 +6,8 @@ import Doctors from "./components/Doctors/Doctors";
 import Home from "./components/Home/Home/Home";
 import Register from "./components/Home/Register/Register";
 import Login from "./components/Login/Login/Login";
+import ManageAppointment from "./components/ManageAppointment/ManageAppointment";
+import UpdateAppointment from "./components/ManageAppointment/UpdateAppointment/UpdateAppointment";
 import NotFound from "./components/NotFound/NotFound";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 import Header from "./components/Shared/Header/Header";
@@ -28,12 +30,18 @@ function App() {
         <PrivateRoute exact  path='/details/:serviceId'>
           <Details></Details>
         </PrivateRoute>
-        <PrivateRoute exact path="/appointment">
+        <PrivateRoute exact path="/appointment/:id">
           <Appointment></Appointment>
         </PrivateRoute>
         <Route exact path="/doctors">
           <Doctors></Doctors>
         </Route>
+        <PrivateRoute exact path="/manageAppointment">
+          <ManageAppointment></ManageAppointment>
+        </PrivateRoute>
+        <PrivateRoute exact path="/appointment/update/:id">
+          <UpdateAppointment></UpdateAppointment>
+        </PrivateRoute>
         <Route exact  path='/login'>
         <Login></Login>
         </Route>

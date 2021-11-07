@@ -1,72 +1,48 @@
-import React, { useEffect, useState } from "react";
-import { Form } from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import { useParams } from "react-router";
-import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import useAuth from "../../hooks/useAuth";
-import Footer from "../Shared/Footer/Footer";
-import "./Appointment.css";
+import React, { useEffect, useState } from 'react';
+import { Form } from 'react-bootstrap';
+import { useForm } from 'react-hook-form';
+import { useParams } from 'react-router';
+import Footer from '../../Shared/Footer/Footer';
+import './UpdateAppointment.css';
 
-const Appointment = () => {
-  const { user } = useAuth();
-  const { id } = useParams();
-  const [service, setService] = useState({});
-  const notify = () => toast("Appoinment make successfully!");
- 
-  const {
-    register,
-    handleSubmit,
-    watch,
-    reset,
-    formState: { errors },
-  } = useForm();
-
-  useEffect(() => {
-    fetch(`http://localhost:5000/details/${id}`)
-      .then((res) => res.json())
-      .then((data) => setService(data));
-  }, []);
-
-
-  const onSubmit = (data) => {
+const UpdateAppointment = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const [service,setService] = useState({});
   
-    console.log(data);
-    fetch("http://localhost:5000/appointment", {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify(data)
-    })
-    .then((res) => res.json())
-    .then((result) => {
-        if (result.insertedId) {
-          // alert("appointment processed successfully");
-          notify();
-          reset();
+    const {id }= useParams();
+    
+    // console.log(service);
+    useEffect(() => {
+        fetch(`http://localhost:5000/appointment/details/${id}`)
+          .then((res) => res.json())
+          .then((data) => setService(data));
+      }, []);
+    
+      const onSubmit = data => {
+        //   console.log(data);
 
-        
-        }
-      });
-  };
+          const url = `http://localhost:5000/appointment/update/${id}`;
+          fetch(url,{
+              method:'PUT',
+              headers:{
+                  'content-type':'application/json'
+              },
+              body:JSON.stringify(data)
+          })
+          .then(res =>res.json())
+          .then(data => {
+              if(data.modifiedCount>0)
+              {
+                  alert('update successful')
+              }
+          })
 
-
-  console.log(service);
-  return (
-    <div className="appointment-section">
-      <ToastContainer />
-      <div className="container ">
-        <h1 className="text-center appointment-title section-title">
-          <b>
-            Make an appointment to a <span>Dentist</span>
-          </b>
-        </h1>
-        <p className="text-center mb-5">
-          <p>To request an appointment, please fill out the form below</p>
-        </p>
-
-        <form className="appointment-form" onSubmit={handleSubmit(onSubmit)}>
+      }
+    return (
+        <div>
+        <div className=" container mt-5">
+            <h3 className="appointment-update-section section-title text-center"><span>Update</span> your appointment</h3>
+            <form className="appointment-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
             <div className="col-12 col-md-6">
               <Form.Group className="mb-3" controlId="formBasicName">
@@ -75,7 +51,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="First Name"
-                  defaultValue={user.displayName}
+                  defaultValue={service.firstName}
                   {...register("firstName", { required: true })}
                 />
               </Form.Group>
@@ -87,6 +63,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="Last Name"
+                  defaultValue={service.lastName}
                   {...register("lastName", { required: true })}
                 />
               </Form.Group>
@@ -100,7 +77,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="First Name"
-                  defaultValue={service._id}
+                  defaultValue={service?._id}
                   {...register("serviceId", { required: true })}
                 />
               </Form.Group>
@@ -112,7 +89,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="First Name"
-                  defaultValue={service.title}
+                  defaultValue={service?.serviceTitle}
                   {...register("serviceTitle", { required: true })}
                 />
               </Form.Group>
@@ -127,7 +104,7 @@ const Appointment = () => {
                 type="email"
                   className="appointment-input"
                   placeholder="Email"
-                  defaultValue={user.email}
+                  defaultValue={service.email}
                   {...register("email", { required: true })}
                 />
               </Form.Group>
@@ -140,6 +117,7 @@ const Appointment = () => {
                 type="number"
                   className="appointment-input"
                   placeholder="Number"
+                  defaultValue={service.Number}
                   {...register("Number")}
                 />
               </Form.Group>
@@ -162,6 +140,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="city"
+                  defaultValue={service.city}
                   {...register("city")}
                 />
               </Form.Group>
@@ -187,6 +166,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="Zip Code"
+                  defaultValue={service.zip}
                   {...register("zip")}
                 />
               </Form.Group>
@@ -202,6 +182,7 @@ const Appointment = () => {
                 type="date"
                   className="appointment-input"
                   placeholder="day"
+                  defaultValue={service.day}
                   {...register("day")}
                 />
               </Form.Group>
@@ -219,23 +200,12 @@ const Appointment = () => {
             </div>
           </div>
           <div className="row">
-            {/* <div className="col-12">
-
-        
-              <FloatingLabel controlId="floatingTextarea2" label="Comments">
-                <Form.Control
-                  as="textarea"
-                  placeholder="Leave a comment here"
-                  style={{ height: "100px" }}
-                />
-              </FloatingLabel>
-
-              
-            </div> */}
+           
           </div>
 
           <input className="carousel-btn" type="submit" />
         </form>
+
         <div className="row my-5">
           <div className="col-12 col-md-10">
             <div className="row d-flex align-items-center">
@@ -259,8 +229,10 @@ const Appointment = () => {
         </div>
       </div>
       <Footer></Footer>
-    </div>
-  );
+      </div>
+      
+       
+    );
 };
 
-export default Appointment;
+export default UpdateAppointment;

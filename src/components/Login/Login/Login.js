@@ -1,6 +1,8 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { Link, useHistory, useLocation } from "react-router-dom";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import useAuth from "../../../hooks/useAuth";
 import facebook from "../../../Images/Icons/facebook.png";
 import google from "../../../Images/Icons/google.png";
@@ -10,6 +12,7 @@ const Login = () => {
   const { signInUsingGoogle, setIsLoading, setUser,signInUsingFacebook,loginProcess,handleEmail,handlePassword,setMessage,message,setError,error } = useAuth();
   const location = useLocation();
   const history = useHistory();
+  const notify = () => toast("login successfully!");
   const redirect_uri = location.state?.from || "/home";
 
   // handle Google Login 
@@ -18,7 +21,7 @@ const Login = () => {
       .then((result) => {
         console.log(result.user);
         setUser(result.user);
-
+        notify();
         setMessage("Login Successful");
         setError("");
         history.push(redirect_uri);
@@ -42,6 +45,7 @@ const Login = () => {
         history.push(redirect_uri);
       })
       .catch((error) => {
+        notify();
         setMessage("");
         setError("Login Failed");
       })
@@ -56,6 +60,7 @@ const Login = () => {
     loginProcess()
     .then((result) => {
         setUser(result.user);
+        notify();
         setMessage("Login Successful");
         setError("");
         history.push(redirect_uri);
@@ -70,6 +75,7 @@ const Login = () => {
 
   return (
     <div className="login-section">
+      <ToastContainer />
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-6 col-lg-4 mx-auto form-section">

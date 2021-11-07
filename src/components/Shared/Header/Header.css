@@ -29,3 +29,11 @@
 .active-nav {
   font-weight: bold;
 }
+.drop-down-section a {
+  padding: 20px 20px;
+  transition: 0.5s;
+}
+.drop-down-section a:hover {
+  background-color: #3fce92;
+  color: white;
+}

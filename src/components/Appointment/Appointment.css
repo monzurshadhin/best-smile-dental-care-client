@@ -15,7 +15,12 @@ label {
 }
 .appointment-input {
   border: none;
-  background-color: rgb(226, 220, 220);
+  background-color: rgb(240, 235, 235);
   height: 50px;
   margin-bottom: 30px;
+  width: 100%;
+  padding-left: 20px;
+
+  border: 1px solid #3fce92;
+  outline: none;
 }

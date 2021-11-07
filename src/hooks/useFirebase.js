@@ -13,6 +13,7 @@ import {
 import { useEffect, useState } from "react";
 import firebaseAuthentication from "../components/Login/firebase/firebase.init";
 
+
 firebaseAuthentication();
 const useFirebase = () => {
   // useState 
@@ -33,7 +34,8 @@ const useFirebase = () => {
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
 
-  
+ 
+
   // get and set name,email and password 
   const handleName = (e) => {
     setName(e.target.value);
@@ -47,7 +49,8 @@ const useFirebase = () => {
 
   // register new user 
   const registerNewUsers = (e) => {
-    e.preventDefault();
+    // e.preventDefault();
+    
 
     if (password.length < 6) {
         setError("Password Must be 6 digit");
@@ -63,12 +66,15 @@ const useFirebase = () => {
       console.log(result.user);
     
       setUser(result.user);
-      updateBasicInfo();
       veryfyEmail();
+      updateBasicInfo();
+      
       setError("");
       setMessage("Registration successful");
         
-      window.location.reload();
+      // window.location.reload();
+      
+      
 
       
         
@@ -84,7 +90,9 @@ const useFirebase = () => {
       displayName: name,
     })
       .then(() => {
-
+        const newUser = {...user,displayName:name};
+        setUser(newUser);
+      
       })
       .catch((error) => {});
   };

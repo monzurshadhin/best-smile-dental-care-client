@@ -46,13 +46,19 @@ const Register = () => {
           setIsLoading(false);
         });
     }
+
+    const handleRegisterNewUser = (e) =>{
+      e.preventDefault();
+      registerNewUsers();
+      history.push(redirect_uri);
+    }
     return (
         <div className="login-section">
         <div className="container">
           <div className="row">
             <div className="col-12 col-md-6 col-lg-4 mx-auto form-section">
             <h3 className="text-center mb-4">Register</h3>
-              <Form onSubmit={registerNewUsers}>
+              <Form onSubmit={handleRegisterNewUser}>
               <Form.Group className="mb-3" controlId="formBasicName">
                 
                 <Form.Control onBlur={handleName} className="input-field" type="text" placeholder="Name" required />

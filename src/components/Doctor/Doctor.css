@@ -1,4 +1,4 @@
-.designation:hover {
+.designation {
   color: #3fce92;
   cursor: pointer;
 }
@@ -11,7 +11,7 @@
   padding: 0% !important;
 }
 .doctors-card img {
-  transition: 0.5s;
+  transition: 0.8s;
 }
 .doctors-card:hover img {
   transform: scale(1.2);
