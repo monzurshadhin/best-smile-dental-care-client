@@ -90,7 +90,7 @@ const useFirebase = () => {
       displayName: name,
     })
       .then(() => {
-        const newUser = {...user,displayName:name};
+        const newUser = {...user,displayName:name,email:email};
         setUser(newUser);
       
       })

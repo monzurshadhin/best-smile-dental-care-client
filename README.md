@@ -11,4 +11,4 @@ This project is for a dental care.where any one can get service from online. and
 - you can login by using Google and Facebook.
 - you can see services and also details of that services after login.
 - you can make an appointment after login.
-- you can also see number of doctors in this dental care.
+- you can also see number of doctors in this dental care..
