@@ -20,6 +20,9 @@
 }
 .service-card {
   transition: 0.3s;
+  border: 1px solid #3fce92;
+  border-radius: 5px;
+  padding-bottom: 20px;
 }
 .service-card:hover .card-img {
   transform: scale(1.1);

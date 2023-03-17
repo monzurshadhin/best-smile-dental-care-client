@@ -23,7 +23,7 @@ const Appointment = () => {
   } = useForm();
 
   useEffect(() => {
-    fetch(`https://thawing-lowlands-95103.herokuapp.com/details/${id}`)
+    fetch(`http://localhost/code/laravel-backend/public/api/service-details/${id}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -31,28 +31,37 @@ const Appointment = () => {
 
   const onSubmit = (data) => {
   
-    console.log(data);
-    fetch("https://thawing-lowlands-95103.herokuapp.com/appointment", {
+    // console.log(data);
+    fetch("http://localhost/code/laravel-backend/public/api/appointment", {
       method: "POST",
       headers: {
         "content-type": "application/json",
+        "Accept":"application/json",
       },
       body: JSON.stringify(data)
     })
-    .then((res) => res.json())
-    .then((result) => {
-        if (result.insertedId) {
-          // alert("appointment processed successfully");
-          notify();
+    .then((res) => {
+      res.json();
+      // console.log(res);
+      if(res.status==200){
+        notify();
           reset();
+      }
+    })
+    // .then((result) => {
+    //     // if (result.firstName) {
+    //     //   // alert("appointment processed successfully");
+    //     //   notify();
+    //     //   reset();
 
         
-        }
-      });
+    //     // }
+    //     console.log(result);
+    //   });
   };
 
 
-  console.log(service);
+  // console.log(service);
   return (
     <div className="appointment-section">
       <ToastContainer />
@@ -100,7 +109,7 @@ const Appointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="First Name"
-                  defaultValue={service._id}
+                  defaultValue={service.id}
                   {...register("serviceId", { required: true })}
                 />
               </Form.Group>

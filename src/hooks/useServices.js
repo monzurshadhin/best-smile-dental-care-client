@@ -3,12 +3,15 @@ import { useHistory } from "react-router";
 
 const useServices = () =>{
 
-    const [services,setServices] = useState([])
+    const [services,setServices] = useState([]);
+    const [isLoading,setIsLoading] = useState(true);
     
     useEffect(() => {
-        fetch("https://thawing-lowlands-95103.herokuapp.com/services")
+        // fetch("https://best-smile-dental-care-server.vercel.app/services")
+        fetch("http://localhost/code/laravel-backend/public/api/services")
           .then((res) => res.json())
           .then((data) => setServices(data));
+          setIsLoading(false);
       }, []);
 
       const history = useHistory();
@@ -20,7 +23,8 @@ const useServices = () =>{
 
     return{
         services,
-        handleFoodDetails
+        handleFoodDetails,
+        isLoading
     }
 }
 export default useServices;

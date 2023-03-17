@@ -2,26 +2,29 @@ import React, { useEffect, useState } from 'react';
 import { Form } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router';
+import { toast, ToastContainer } from 'react-toastify';
 import Footer from '../../Shared/Footer/Footer';
 import './UpdateAppointment.css';
+import { useHistory } from "react-router-dom";
 
 const UpdateAppointment = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const [service,setService] = useState({});
-  
+    const notify = () => toast("Appoinment updated successfully!");
+    let history = useHistory();
     const {id }= useParams();
     
-    // console.log(service);
+    // console.log(id);
     useEffect(() => {
-        fetch(`https://thawing-lowlands-95103.herokuapp.com/appointment/details/${id}`)
-          .then((res) => res.json())
-          .then((data) => setService(data));
-      }, []);
-    
+      fetch(`http://localhost/code/laravel-backend/public/api/appointment-details/${id}`)
+        .then((res) => res.json())
+        .then((data) => setService(data));
+    }, []);
+  
       const onSubmit = data => {
-        //   console.log(data);
+          console.log(data);
 
-          const url = `https://thawing-lowlands-95103.herokuapp.com/appointment/update/${id}`;
+          const url = `http://localhost/code/laravel-backend/public/api/appointment-update/${id}`;
           fetch(url,{
               method:'PUT',
               headers:{
@@ -29,18 +32,27 @@ const UpdateAppointment = () => {
               },
               body:JSON.stringify(data)
           })
-          .then(res =>res.json())
-          .then(data => {
-              if(data.modifiedCount>0)
-              {
-                  alert('update successful')
-              }
+          .then(res =>{
+            res.json()
+            // console.log(res);
+            if(res.status == 200){
+              notify();
+              
+              // history.push('/manageAppointment')
+            }
           })
+          // .then(data => {
+          //     if(data.modifiedCount>0)
+          //     {
+          //         alert('update successful')
+          //     }
+          // })
 
       }
     return (
         <div>
         <div className=" container mt-5">
+        <ToastContainer />
             <h3 className="appointment-update-section section-title text-center"><span>Update</span> your appointment</h3>
             <form className="appointment-form" onSubmit={handleSubmit(onSubmit)}>
           <div className="row">
@@ -77,7 +89,7 @@ const UpdateAppointment = () => {
                 <input
                   className="appointment-input"
                   placeholder="First Name"
-                  defaultValue={service?._id}
+                  defaultValue={service?.serviceId}
                   {...register("serviceId", { required: true })}
                 />
               </Form.Group>
@@ -128,9 +140,9 @@ const UpdateAppointment = () => {
               <Form.Label>Gender*</Form.Label>
               <br />
               <select {...register("gender")} className="appointment-input">
-                <option value="female">female</option>
-                <option value="male">male</option>
-                <option value="other">other</option>
+                <option selected={service.gender=='female'?'selected':''} value="female">female</option>
+                <option selected={service.gender=='male'?'selected':''} value="male">male</option>
+                <option selected={service.gender=='other'?'selected':''} value="other">other</option>
               </select>
             </div>
             <div className="col-12 col-md-6">
@@ -153,9 +165,9 @@ const UpdateAppointment = () => {
                 <Form.Label>Country*</Form.Label>
                 <br />
                 <select {...register("country")} className="appointment-input">
-                <option value="Bangladesh">Bangladesh</option>
-                <option value="India">India</option>
-                <option value="Nepal">Nepal</option>
+                <option selected={service.country=='Bangladesh'?'selected':''} value="Bangladesh">Bangladesh</option>
+                <option selected={service.country=='India'?'selected':''} value="India">India</option>
+                <option selected={service.country=='Nepal'?'selected':''} value="Nepal">Nepal</option>
               </select>
               </Form.Group>
             </div>
@@ -192,9 +204,9 @@ const UpdateAppointment = () => {
                 <Form.Label>Select Time*</Form.Label>
                 <br />
                 <select {...register("time")} className="appointment-input">
-                <option value="morning">Morning</option>
-                <option value="noon">Noon</option>
-                <option value="night">Night</option>
+                <option selected={service.time=='morning'?'selected':''} value="morning">Morning</option>
+                <option selected={service.time=='noon'?'selected':''} value="noon">Noon</option>
+                <option selected={service.time=='night'?'selected':''} value="night">Night</option>
               </select>
               </Form.Group>
             </div>

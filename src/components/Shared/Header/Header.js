@@ -52,7 +52,10 @@ const Header = () => {
               <>
                 <Navbar.Text>
                   <a className="user-name" href="#login">
-                    {user.displayName}
+
+                  
+                    {user?.photoURL?(<img src={user.photoURL} height='50px' style={{'borderRadius':'50%'}} alt="" />):user.displayName}
+                  
                   </a>
                 </Navbar.Text>
                 <button onClick={logOut} className="header-btn" >

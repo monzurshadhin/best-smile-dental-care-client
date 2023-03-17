@@ -8,7 +8,7 @@ const Details = () => {
   const { serviceId } = useParams();
   const [service,setService] = useState({})
   useEffect(() => {
-    fetch(`https://thawing-lowlands-95103.herokuapp.com/details/${serviceId}`)
+    fetch(`http://localhost/code/laravel-backend/public/api/service-details/${serviceId}`)
       .then((res) => res.json())
       .then((data) => setService(data));
   }, []);
@@ -31,7 +31,7 @@ const Details = () => {
                   $ <span>{service?.price}</span>
                 </b>
               </h3>
-              <Link to={`/appointment/${service?._id}`}>
+              <Link to={`/appointment/${service?.id}`}>
                 {/* <div className="d-flex justify-content-between"> */}
                 <button className="carousel-btn">Make Appointment</button>
                 {/* <button className="view-btn">View Appointment</button> */}
