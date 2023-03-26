@@ -14,7 +14,6 @@ const UpdateAppointment = () => {
     let history = useHistory();
     const {id }= useParams();
     
-    // console.log(id);
     useEffect(() => {
       fetch(`http://localhost/code/laravel-backend/public/api/appointment-details/${id}`)
         .then((res) => res.json())
@@ -34,19 +33,14 @@ const UpdateAppointment = () => {
           })
           .then(res =>{
             res.json()
-            // console.log(res);
+            
             if(res.status == 200){
               notify();
               
-              // history.push('/manageAppointment')
+              
             }
           })
-          // .then(data => {
-          //     if(data.modifiedCount>0)
-          //     {
-          //         alert('update successful')
-          //     }
-          // })
+          
 
       }
     return (

@@ -16,21 +16,10 @@ const ManageAppointment = () => {
     .then(res=> res.json())
     .then(data => setAppointments(data))
   },[])
-  // useEffect(() => {
-  //   const data = { email: user.email };
-  //   fetch("https://best-smile-dental-care-server.vercel.app/appointment/manage", {
-  //     method: "POST",
-  //     headers: {
-  //       "content-type": "application/json",
-  //     },
-  //     body: JSON.stringify(data),
-  //   })
-  //     .then((res) => res.json())
-  //     .then((data) => setAppointments(data));
-  // }, []);
+
 
   const handleDelete = (id) => {
-    // console.log(id);
+  
     const url = `http://localhost/code/laravel-backend/public/api/appointment-delete/${id}`;
     fetch(url, {
       method: "DELETE",
@@ -47,13 +36,7 @@ const ManageAppointment = () => {
         }
       })
       .then((data) => {
-        // if (data.deletedCount) {
-        //   console.log(data);
-        //   const remaining = appointments.filter(
-        //     (appointment) => appointment._id !== id
-        //   );
-        //   setAppointments(remaining);
-        // }
+       
         console.log('data',data);
       });
   };
